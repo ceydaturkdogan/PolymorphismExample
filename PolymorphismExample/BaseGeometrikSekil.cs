@@ -9,14 +9,14 @@ namespace PolymorphismExample
 
     public class BaseGeometrikSekil() //base class oluşturulmuştur
     {
-        public int Genislik { get; set; }
-        public int Yukseklik { get; set; }
+        public double Genislik { get; set; }
+        public double Yukseklik { get; set; }
 
-        public virtual int AlanHesapla(int genislik, int yukseklik) //ana method oluşturulmuştur
+        public virtual double AlanHesapla(double genislik, double yukseklik) //ana method oluşturulmuştur
         {
             Genislik = genislik;
             Yukseklik = yukseklik;
-            int alan = genislik * yukseklik;
+            double alan = genislik * yukseklik;
             Console.WriteLine(alan);
             return alan;
 
@@ -25,7 +25,7 @@ namespace PolymorphismExample
 
     public class Kare : BaseGeometrikSekil //base classtaan miras alınarak diğer class oluşturulmuştur.
     {
-        public override int AlanHesapla(int genislik, int yukseklik) //method overloading yapılmıştır
+        public override double AlanHesapla(double genislik, double yukseklik) //method overloading yapılmıştır
         {
             return base.AlanHesapla(genislik, yukseklik);//baseclass ile aynı şekilde döndüreceği için return base kullanılmıştır.
         }
@@ -33,7 +33,7 @@ namespace PolymorphismExample
 
     public class Dikdortgen : BaseGeometrikSekil //base classtaan miras alınarak diğer class oluşturulmuştur.
     {
-        public override int AlanHesapla(int genislik, int yukseklik)//method overloading yapılmıştır
+        public override double AlanHesapla(double genislik, double yukseklik)//method overloading yapılmıştır
         {
             return base.AlanHesapla(genislik, yukseklik); //baseclass ile aynı şekilde döndüreceği için return base kullanılmıştır.
         }
@@ -41,9 +41,9 @@ namespace PolymorphismExample
 
     public class Ucgen : BaseGeometrikSekil //base classtaan miras alınarak diğer class oluşturulmuştur.
     {
-        public override int AlanHesapla(int genislik, int yukseklik)//method overloading yapılmıştır
+        public override double AlanHesapla(double genislik, double yukseklik)//method overloading yapılmıştır
         {
-            int alan = (genislik * yukseklik) / 2; //method overloading yapılırken method içerisinde yeni hesaplama yapılmıştır.
+            double alan = (genislik * yukseklik) / 2; //method overloading yapılırken method içerisinde yeni hesaplama yapılmıştır.
             Console.WriteLine(alan);
             return alan;
         }
